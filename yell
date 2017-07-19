@@ -10,7 +10,7 @@ yell(){
 
   if [[ $? -eq 0 ]];
   then
-    $(say -v $voice --progress "$message $ok")
+    $(say -v $voice --progress "$message")
     send_email "DONE" "$ok finished at: $hour"
     slack_notify "DONE" "$ok finished at: $hour"
   else
