@@ -1,5 +1,3 @@
-EMAIL_ADDR="pablojmarti@gmail.com"
-
 send_email(){
 
   # send BODY to email address with subject

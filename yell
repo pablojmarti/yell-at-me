@@ -1,13 +1,7 @@
 #!/usr/bin/env bash
-
-voice="Princess"
-hour=`date +"%r"`
-message="I AM DONE RUNNING!"
-failure_msg="TASK FAILED?!?!?!?!"
-
-
 # source other scripts
 . "${BASH_SOURCE%/*}/email.sh"
+. "${BASH_SOURCE%/*}/.env"
 
 
 yell(){
