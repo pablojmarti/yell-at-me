@@ -6,6 +6,9 @@ message="I AM DONE RUNNING!"
 failure_msg="TASK FAILED?!?!?!?!"
 
 
+# source other scripts
+. "${BASH_SOURCE%/*}/email.sh"
+
 
 yell(){
 
@@ -13,9 +16,11 @@ yell(){
 
   if [[ $? -eq 0 ]];
   then
-    $(say -v $voice --progress "$message")
+    $(say -v $voice --progress "$message $ok")
+    send_email "DONE" "$ok finished at: $hour"
   else
     $(say -v $voice "$failure_msg")
+    send_email "FAILED" "$ok"
   fi
 }
 
