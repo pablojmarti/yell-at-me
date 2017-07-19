@@ -13,7 +13,7 @@ yell(){
 
   if [[ $? -eq 0 ]];
   then
-    $(say -v $voice --progress "$message $ok")
+    $(say -v $voice --progress "$message")
   else
     $(say -v $voice "$failure_msg")
   fi
